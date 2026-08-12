@@ -8,7 +8,7 @@ CREATE TABLE users (
 CREATE TABLE rooms (
                        id BIGSERIAL PRIMARY KEY,
                        name VARCHAR(100) NOT NULL,
-                       status VARCHAR(20),
+                       disponibility VARCHAR(20),
                        description TEXT,
                        capacity_max INTEGER,
                        hour_open TIME NOT NULL,
