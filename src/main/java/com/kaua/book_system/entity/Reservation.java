@@ -22,5 +22,9 @@ public class Reservation {
     @JoinColumn(name = "user_id")
     private User userId;
 
+    @ManyToOne
+    @JoinColumn(name = "room_id")
+    private Room roomId;
+
 
 }
