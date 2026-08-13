@@ -1,7 +1,7 @@
 package com.kaua.book_system.enums;
 
 public enum Disponibility {
-    PENDING,
+    DISPONIBLE,
     CONFIRMED,
     COMPLETED,
     CANCELLED

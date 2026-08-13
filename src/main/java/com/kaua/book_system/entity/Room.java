@@ -1,5 +1,6 @@
 package com.kaua.book_system.entity;
 
+import com.kaua.book_system.enums.Disponibility;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -25,7 +26,8 @@ public class Room {
     private String name;
 
     @NotNull
-    private String disponibility;
+    @Enumerated(EnumType.STRING)
+    private Disponibility disponibility;
 
     @NotNull
     private String description;
