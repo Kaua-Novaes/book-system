@@ -1,16 +1,24 @@
 package com.kaua.book_system.mapper;
 
-import com.kaua.book_system.dto.UserDto;
+import com.kaua.book_system.dto.user.UserRequestDto;
 import com.kaua.book_system.entity.User;
 
 public class UserMapper {
 
-    public User toEntity(UserDto userDto){
+    public User toEntity(UserRequestDto userRequestDto){
         return new User(
                 null,
-                userDto.username(),
-                userDto.password(),
-                userDto.role()
+                userRequestDto.username(),
+                userRequestDto.password(),
+                userRequestDto.role()
+        );
+    }
+
+    public UserRequestDto toDto(User user){
+        return new UserRequestDto(
+                user.getUsername(),
+                user.getPassword(),
+                user.getRole()
         );
     }
 }

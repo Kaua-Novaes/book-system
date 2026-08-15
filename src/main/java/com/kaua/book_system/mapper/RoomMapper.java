@@ -1,25 +1,24 @@
 package com.kaua.book_system.mapper;
 
-import com.kaua.book_system.dto.RoomDto;
+import com.kaua.book_system.dto.room.RoomRequestDto;
 import com.kaua.book_system.entity.Room;
 
 public class RoomMapper {
 
-    public Room toEntity(RoomDto roomDto){
+    public Room toEntity(RoomRequestDto roomRequestDto){
         return new Room(
                 null,
-                roomDto.name(),
-                roomDto.disponibility(),
-                roomDto.description(),
-                roomDto.capacityMax(),
-                roomDto.hourOpen(),
-                roomDto.hourClose()
+                roomRequestDto.name(),
+                roomRequestDto.disponibility(),
+                roomRequestDto.description(),
+                roomRequestDto.capacityMax(),
+                roomRequestDto.hourOpen(),
+                roomRequestDto.hourClose()
         );
     }
 
-    public RoomDto toDto(Room room){
-        return new RoomDto(
-                room.getId(),
+    public RoomRequestDto toDto(Room room){
+        return new RoomRequestDto(
                 room.getName(),
                 room.getDisponibility(),
                 room.getDescription(),
