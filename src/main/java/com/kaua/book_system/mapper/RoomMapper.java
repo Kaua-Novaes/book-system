@@ -2,7 +2,9 @@ package com.kaua.book_system.mapper;
 
 import com.kaua.book_system.dto.room.RoomRequestDto;
 import com.kaua.book_system.entity.Room;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RoomMapper {
 
     public Room toEntity(RoomRequestDto roomRequestDto){

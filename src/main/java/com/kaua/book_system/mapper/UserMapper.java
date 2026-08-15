@@ -2,7 +2,9 @@ package com.kaua.book_system.mapper;
 
 import com.kaua.book_system.dto.user.UserRequestDto;
 import com.kaua.book_system.entity.User;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserMapper {
 
     public User toEntity(UserRequestDto userRequestDto){
