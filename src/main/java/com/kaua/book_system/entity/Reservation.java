@@ -40,6 +40,7 @@ public class Reservation {
     private LocalDateTime execTime;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     private Disponibility status;
 
 
