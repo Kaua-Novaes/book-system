@@ -1,6 +1,7 @@
 package com.kaua.book_system.mapper;
 
 import com.kaua.book_system.dto.room.RoomRequestDto;
+import com.kaua.book_system.dto.room.RoomReturnDto;
 import com.kaua.book_system.entity.Room;
 import org.springframework.stereotype.Component;
 
@@ -27,6 +28,13 @@ public class RoomMapper {
                 room.getCapacityMax(),
                 room.getHourOpen(),
                 room.getHourClose()
+        );
+    }
+
+    public RoomReturnDto toReturnDto(Room room){
+        return new RoomReturnDto(
+                room.getId(),
+                "Sala criada com sucesso"
         );
     }
 }
