@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Getter
 @Setter
@@ -36,9 +37,9 @@ public class Room {
     private int capacityMax;
 
     @NotNull
-    private LocalDateTime hourOpen;
+    private LocalTime hourOpen;
 
     @NotNull
-    private LocalDateTime hourClose;
+    private LocalTime hourClose;
 
 }

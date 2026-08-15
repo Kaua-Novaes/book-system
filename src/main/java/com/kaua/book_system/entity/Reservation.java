@@ -37,7 +37,7 @@ public class Reservation {
     private LocalDateTime hourEnd;
 
     @NotNull
-    private LocalDateTime execTime;
+    private int execTime;
 
     @NotNull
     @Enumerated(EnumType.STRING)

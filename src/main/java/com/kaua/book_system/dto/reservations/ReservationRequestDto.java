@@ -11,7 +11,7 @@ public record ReservationRequestDto(
         Room roomId,
         LocalDateTime hourStart,
         LocalDateTime hourEnd,
-        LocalDateTime execTime,
+        int execTime,
         Disponibility status
 ) {
 
