@@ -1,11 +1,10 @@
-package com.kaua.book_system.dto.room;
+package com.kaua.book_system.dto.room.create;
 
 import com.kaua.book_system.enums.Disponibility;
 
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-public record RoomRequestDto(
+public record RoomCreateRequestDto(
         String name,
         Disponibility disponibility,
         String description,

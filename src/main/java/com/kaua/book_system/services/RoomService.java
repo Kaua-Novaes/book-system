@@ -1,7 +1,7 @@
 package com.kaua.book_system.services;
 
-import com.kaua.book_system.dto.room.RoomRequestDto;
-import com.kaua.book_system.dto.room.RoomReturnDto;
+import com.kaua.book_system.dto.room.create.RoomCreateRequestDto;
+import com.kaua.book_system.dto.room.create.RoomCreateResponseDto;
 import com.kaua.book_system.entity.Room;
 import com.kaua.book_system.mapper.RoomMapper;
 import com.kaua.book_system.repository.RoomRepository;
@@ -18,9 +18,11 @@ public class RoomService {
         this.roomRepository = roomRepository;
     };
 
-    public RoomReturnDto saveRoom(RoomRequestDto roomRequestDto){
-        Room room = roomMapper.toEntity(roomRequestDto);
+    public RoomCreateResponseDto saveRoom(RoomCreateRequestDto roomCreateRequestDto){
+        Room room = roomMapper.toEntity(roomCreateRequestDto);
         roomRepository.save(room);
         return roomMapper.toReturnDto(room);
     };
+
+    public
 }

@@ -3,6 +3,7 @@ package com.kaua.book_system.entity;
 import com.kaua.book_system.enums.Disponibility;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,6 +35,7 @@ public class Room {
     private String description;
 
     @NotNull
+    @Positive
     private int capacityMax;
 
     @NotNull

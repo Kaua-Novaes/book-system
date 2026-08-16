@@ -1,9 +1,8 @@
 package com.kaua.book_system.controller;
 
 
-import com.kaua.book_system.dto.room.RoomRequestDto;
-import com.kaua.book_system.dto.room.RoomReturnDto;
-import com.kaua.book_system.entity.Room;
+import com.kaua.book_system.dto.room.create.RoomCreateRequestDto;
+import com.kaua.book_system.dto.room.create.RoomCreateResponseDto;
 import com.kaua.book_system.services.RoomService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +18,9 @@ public class RoomController {
     }
 
     @PostMapping
-    public ResponseEntity<?> createRoom(@RequestBody RoomRequestDto roomRequestDto){
-        System.out.println(roomRequestDto.name());
-        RoomReturnDto room =  roomService.saveRoom(roomRequestDto);
+    public ResponseEntity<?> createRoom(@RequestBody RoomCreateRequestDto roomCreateRequestDto){
+        System.out.println(roomCreateRequestDto.name());
+        RoomCreateResponseDto room =  roomService.saveRoom(roomCreateRequestDto);
         return ResponseEntity.ok(room);
     }
 }
