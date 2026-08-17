@@ -7,6 +7,9 @@ import com.kaua.book_system.mapper.RoomMapper;
 import com.kaua.book_system.repository.RoomRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class RoomService {
 
@@ -23,6 +26,25 @@ public class RoomService {
         roomRepository.save(room);
         return roomMapper.toDto(room);
     };
+
+    public void deleteRoom(Long id){
+        Optional<Room> room = roomRepository.findById(id);
+
+        if (room.isEmpty()){
+            throw new RuntimeException("Room not find");
+        }
+
+        roomRepository.deleteById(id);
+
+    };
+
+    public List<RoomResponseDto> listAllRooms(){
+
+        return roomRepository.findAll()
+                .stream()
+                .map(roomMapper::toDto)
+                .toList();
+    }
 
 
 }
