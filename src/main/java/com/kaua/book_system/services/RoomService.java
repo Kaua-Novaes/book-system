@@ -46,5 +46,15 @@ public class RoomService {
                 .toList();
     }
 
+    public RoomResponseDto getRoom(Long id){
+        Optional<Room> room = roomRepository.findById(id);
+
+        if (room.isEmpty()){
+            throw new RuntimeException("Room not find");
+        }
+
+        return roomMapper.toDto(room.get());
+    }
+
 
 }
