@@ -1,40 +1,34 @@
 package com.kaua.book_system.mapper;
 
-import com.kaua.book_system.dto.room.create.RoomCreateRequestDto;
-import com.kaua.book_system.dto.room.create.RoomCreateResponseDto;
+import com.kaua.book_system.dto.room.RoomRequestDto;
+import com.kaua.book_system.dto.room.RoomResponseDto;
 import com.kaua.book_system.entity.Room;
 import org.springframework.stereotype.Component;
 
 @Component
 public class RoomMapper {
 
-    public Room toEntity(RoomCreateRequestDto roomCreateRequestDto){
+    public Room toEntity(RoomRequestDto roomRequestDto){
         return new Room(
                 null,
-                roomCreateRequestDto.name(),
-                roomCreateRequestDto.disponibility(),
-                roomCreateRequestDto.description(),
-                roomCreateRequestDto.capacityMax(),
-                roomCreateRequestDto.hourOpen(),
-                roomCreateRequestDto.hourClose()
+                roomRequestDto.name(),
+                roomRequestDto.disponibility(),
+                roomRequestDto.description(),
+                roomRequestDto.capacityMax(),
+                roomRequestDto.hourOpen(),
+                roomRequestDto.hourClose()
         );
     }
 
-    public RoomCreateRequestDto toDto(Room room){
-        return new RoomCreateRequestDto(
+    public RoomResponseDto toDto(Room room){
+        return new RoomResponseDto(
+                room.getId(),
                 room.getName(),
                 room.getDisponibility(),
                 room.getDescription(),
                 room.getCapacityMax(),
                 room.getHourOpen(),
                 room.getHourClose()
-        );
-    }
-
-    public RoomCreateResponseDto toReturnDto(Room room){
-        return new RoomCreateResponseDto(
-                room.getId(),
-                "Sala criada com sucesso"
         );
     }
 }
