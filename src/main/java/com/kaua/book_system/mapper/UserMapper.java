@@ -1,6 +1,7 @@
 package com.kaua.book_system.mapper;
 
 import com.kaua.book_system.dto.user.UserRequestDto;
+import com.kaua.book_system.dto.user.UserResponseDto;
 import com.kaua.book_system.entity.User;
 import org.springframework.stereotype.Component;
 
@@ -16,11 +17,10 @@ public class UserMapper {
         );
     }
 
-    public UserRequestDto toDto(User user){
-        return new UserRequestDto(
-                user.getUsername(),
-                user.getPassword(),
-                user.getRole()
+    public UserResponseDto toDto(User user){
+        return new UserResponseDto(
+                user.getId(),
+                user.getUsername()
         );
     }
 }
